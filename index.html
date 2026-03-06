@@ -1,220 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Friendship Club</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radhika Friendship Club</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/dist/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle at top, #0d1b2a 0%, #010409 100%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Arial, Helvetica, sans-serif;
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+        }
+
+        h1.main-title {
+            color: #00ffcc;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .profile-circle {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 4px solid #00ffcc;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+        }
+
+        .profile-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .name {
+            font-size: 32px;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 10px 0;
+        }
+
+        .subtitle {
+            color: #8b949e;
+            font-size: 18px;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .divider::before, .divider::after {
+            content: "";
+            height: 1px;
+            width: 50px;
+            background-color: #00ffcc;
+            margin: 0 10px;
+        }
+
+        .tagline {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: #8b949e;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .whatsapp-section{
+text-align:center;
+margin:40px 0;
 }
 
-body{
-  background:#000;
-  color:#fff;
-}
-
-.container{
-  max-width:480px;
-  margin:auto;
-  padding:20px;
-  text-align:center;
-}
-
-/* 🌟 GOLDEN HEADER */
-h1{
-  font-size:34px;
-  margin-bottom:35px;
-  background: linear-gradient(45deg, #f9d976, #f39f00, #fff2b2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
-  letter-spacing:1px;
-}
-
-/* SUB HEADING */
-h2{
-  font-size:22px;
-  line-height:1.5;
-  margin-bottom:35px;
-}
-
-.highlight{
-  color:#ffd700;
-  border-bottom:2px solid #ffd700;
-  padding-bottom:2px;
-}
-
-/* LIST */
-ul{
-  list-style:none;
-  text-align:left;
-  margin-top:20px;
-}
-
-ul li{
-  font-size:16px;
-  margin-bottom:12px;
-}
-
-/* 💚 ATTRACTIVE WHATSAPP BUTTON */
 .whatsapp-btn{
-  display:block;
-  width:100%;
-  background: linear-gradient(135deg, #00c853, #00e676);
-  color:#fff;
-  text-decoration:none;
-  padding:20px 0;
-  margin:35px 0;
-  font-size:22px;
-  font-weight:bold;
-  border-radius:8px;
-  box-shadow: 0 0 20px rgba(0, 255, 120, 0.6);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+display:inline-flex;
+align-items:center;
+gap:10px;
+background:linear-gradient(45deg,#25D366,#00b894);
+color:#fff;
+padding:16px 35px;
+font-size:22px;
+font-weight:600;
+border-radius:40px;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+.whatsapp-btn img{
+width:28px;
 }
 
 .whatsapp-btn:hover{
-  transform: scale(1.04);
-  box-shadow: 0 0 30px rgba(0, 255, 120, 0.9);
+transform:scale(1.05);
 }
 
-/* IMAGE SECTION */
-.image-section{
-  width:100%;
-  aspect-ratio:1/1;
-  overflow:hidden;
-}
+        .stats-row {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #30363d;
+            padding-top: 20px;
+        }
 
-.image-section img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:6px;
-}
+        .stat-item {
+            flex: 1;
+        }
 
-/* ===== FULL SCREEN FORCE POPUP ===== */
-#forcePopup{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.95);
-  z-index:999999;
-  display:none;
-  justify-content:center;
-  align-items:center;
-}
+        .stat-number {
+            color: #00ffcc;
+            font-size: 24px;
+            font-weight: bold;
+            display: block;
+        }
 
-#forcePopup .box{
-  background:#fff;
-  color:#000;
-  padding:25px;
-  border-radius:18px;
-  max-width:330px;
-  text-align:center;
-}
-
-#forcePopup h3{
-  margin-bottom:10px;
-  font-size:20px;
-}
-
-#forcePopup p{
-  font-size:14px;
-  margin-bottom:20px;
-}
-
-#forcePopup button{
-  width:100%;
-  padding:14px;
-  font-size:16px;
-  font-weight:bold;
-  background:#00c853;
-  border:none;
-  border-radius:30px;
-  cursor:pointer;
-}
-</style>
+        .stat-label {
+            color: #8b949e;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- FULL SCREEN FORCE POPUP -->
-<div id="forcePopup">
-  <div class="box">
-    <h3> Open in Browser</h3>
-    <p>
-      Tap OK To Open This Site in Chrome.<br><br>
-      Please <b>Tap/ Ok</b> To Open Website.
-    </p>
-    <button id="openBrowserBtn">OK</button>
-  </div>
+    <div class="container">
+        <h1 class="main-title">Join Radhika Friendship Club</h1>
+
+        <div class="profile-circle">
+            <img src="https://i.postimg.cc/7Pp2W4dB/Radhika838.jpg" alt="Radhika">
+        </div>
+
+        <div class="name">DM FOR DETAILS</div>
+        
+        <div class="divider">
+            <div class="subtitle">Trusted & verified</div>
+        </div>
+
+        <div class="tagline">Life is Boring Without Friends</div>
+        
+        <div class="description">
+            Meeting with high profile medam near you
+        </div>
+
+        <div class="whatsapp-section">
+
+<a href="https://wa.me/9165439048?text=Hello%20I%20want%20details" target="_blank" class="whatsapp-btn">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+Whatsapp Now
+</a>
+
 </div>
 
-<div class="container">
-  <br><br>
-
-  <h1>Radhika Friendship Club</h1>
-
-  <h2>
-    <span class="highlight">Meeting</span> with High-Profile
-    <span class="highlight">Madam Near You</span>
-  </h2>
-
-  <ul>
-    <li>✔ Part-Time Opportunity</li>
-    <li>✔ Trusted High-Profile Madam Network</li>
-    <li>✔ Earnings: ₹16,000 – ₹24,000 per assignment (performance based)</li>
-    <li>✔ Immediate Income Opportunity</li>
-    <li>✔ Flexible work • Attractive incentives DM to apply</li>
-    <li>✔ Chat on WhatsApp for Jo*b information</li>
-  </ul>
-
-  <a class="whatsapp-btn" href="https://wa.me/919165439048?text=Please%20send%20information">
-    💬 Chat on WhatsApp Now
-  </a>
-
-  <div class="image-section">
-    <img src="https://i.ibb.co/yx5Kq6D/14039.png" alt="Image">
-  </div>
-</div>
-
-<script>
-(function(){
-  const ua = navigator.userAgent || navigator.vendor || window.opera;
-  const isInApp =
-    ua.includes("Instagram") ||
-    ua.includes("FBAN") ||
-    ua.includes("FBAV");
-
-  if(isInApp){
-
-    /* 🔒 BACK BUTTON BLOCK (2 lines) */
-    history.pushState(null,null,location.href);
-    window.onpopstate=function(){history.go(1);};
-
-    document.body.style.overflow="hidden";
-    const popup=document.getElementById("forcePopup");
-    popup.style.display="flex";
-
-    document.getElementById("openBrowserBtn").onclick=function(){
-      const url=window.location.href;
-
-      if(/Android/i.test(ua)){
-        window.location.href=
-          "intent://" + url.replace(/^https?:\/\//,"") +
-          "#Intent;scheme=https;package=com.android.chrome;end";
-      }
-      else if(/iPhone|iPad|iPod/i.test(ua)){
-        window.location.href=url;
-      }
-    };
-  }
-})();
-</script>
+        <div class="stats-row">
+            <div class="stat-item">
+                <span class="stat-number">8+</span>
+                <span class="stat-label">Years<br>Experience</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">50k+</span>
+                <span class="stat-label">Happy<br>Members</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Online<br>Support</span>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
-
